@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratic</title>
+</head>
+
+<body>
+    <script>
+        alert("Cuidado, você está sendo seguido!");
+
+        function descobrir(n1, n2, n3) {
+            var n1 = parseInt(prompt("Digite um número:"));
+            var n2 = parseInt(prompt("Digite um número:"));
+            var n3 = parseInt(prompt("Digite um número:"));
+
+            let maior = Math.max(n1, n2, n3);
+            let menor = Math.min(n1, n2, n3);
+
+            alert("O maior número é " + maior + " e o menor número é " + menor);
+        }
+
+        function idade() {
+            var idade = parseInt(prompt("Digite a idade:"))
+
+            if (idade >= 18)
+                alert("Maior de idade")
+            else if (idade < 18)
+                alert("Menor de idade")
+        }
+
+        function alerta() {
+            alert('Eu falei não clique!')
+        }
+
+        function media() {
+            var n1 = parseInt(prompt("Digite um número:"));
+            var n2 = parseInt(prompt("Digite um número:"));
+            var n3 = parseInt(prompt("Digite um número:"));
+
+            alert("A média é: " + (n1 + n2 + n3) / 3);
+        }
+
+    </script>
+    <div id="btns">
+        <input id="btn1" type="submit" value="Não Clique!" onclick="(alerta())">
+        <input id="btn2" type="submit" value="Contar" onclick="(descobrir())" />
+        <input id="btn3" type="submit" value="Idade" onclick="(idade())" />
+        <input id="btn4" type="submit" value="Média" onclick="(media())" />
+    </div>
+
+    <style>
+        #btns {
+            display: flex;
+            justify-content: center;
+        }
+
+        #btn1 {
+            
+        }
+
+        #btn2 {}
+
+        #btn3 {}
+    </style>
+</body>
+
+</html>
