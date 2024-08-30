@@ -9,19 +9,22 @@
 
 <body>
     <script>
-        alert("Cuidado, você está sendo seguido!");
+        // 1 
+        alert("Cuidado, você está sendo seguido!")
 
+        // 2
         function descobrir(n1, n2, n3) {
-            var n1 = parseInt(prompt("Digite um número:"));
-            var n2 = parseInt(prompt("Digite um número:"));
-            var n3 = parseInt(prompt("Digite um número:"));
+            var n1 = parseInt(prompt("Digite um número:"))
+            var n2 = parseInt(prompt("Digite um número:"))
+            var n3 = parseInt(prompt("Digite um número:"))
 
-            let maior = Math.max(n1, n2, n3);
-            let menor = Math.min(n1, n2, n3);
+            let maior = Math.max(n1, n2, n3)
+            let menor = Math.min(n1, n2, n3)
 
-            alert("O maior número é " + maior + " e o menor número é " + menor);
+            alert("O maior número é " + maior + " e o menor número é " + menor)
         }
 
+        // 3 
         function idade() {
             var idade = parseInt(prompt("Digite a idade:"))
 
@@ -31,39 +34,109 @@
                 alert("Menor de idade")
         }
 
+        // 4
         function alerta() {
             alert('Eu falei não clique!')
         }
 
+        // 5 
         function media() {
-            var n1 = parseInt(prompt("Digite um número:"));
-            var n2 = parseInt(prompt("Digite um número:"));
-            var n3 = parseInt(prompt("Digite um número:"));
+            var n1 = parseInt(prompt("Digite um número:"))
+            var n2 = parseInt(prompt("Digite um número:"))
+            var n3 = parseInt(prompt("Digite um número:"))
 
-            alert("A média é: " + (n1 + n2 + n3) / 3);
+            alert("A média é: " + (n1 + n2 + n3) / 3)
         }
 
+        // 6
+        function imc() {
+            var peso = parseFloat(prompt("Digite seu peso:"))
+            var altura = parseFloat(prompt("Digite sua altura:"))
+            alert("Seu IMC: " + peso / (altura * altura))
+        }
+
+        // 7 
+        function somamultiplos() {
+            let soma = 0
+            for (let i = 1; i < 1000; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    soma += i
+                }
+            }
+            alert(soma)
+        }
+
+        // 8 
+        function fibonacci() {
+            let a = 0
+            let b = 1
+            let somapares = 0
+            let temp = 0
+            while (a <= 50000) {
+                if (a % 2 === 0) {
+                    somapares += a
+                }
+                temp = a
+                a = b
+                b = temp + b
+            }
+            alert(somapares)
+        }
     </script>
     <div id="btns">
-        <input id="btn1" type="submit" value="Não Clique!" onclick="(alerta())">
-        <input id="btn2" type="submit" value="Contar" onclick="(descobrir())" />
-        <input id="btn3" type="submit" value="Idade" onclick="(idade())" />
-        <input id="btn4" type="submit" value="Média" onclick="(media())" />
+        <input id="btn2" type="submit" value="Não Clique!" onclick="(alerta())">
+        <input id="btn3" type="submit" value="Contar" onclick="(descobrir())" />
+        <input id="btn4" type="submit" value="Idade" onclick="(idade())" />
+        <input id="btn5" type="submit" value="Média" onclick="(media())" />
+        <input id="btn6" type="submit" value="IMC" onclick="(imc())" />
+        <input id="btn7" type="submit" value="Soma 3 & 5" onclick="(somamultiplos())" />
+        <input id="btn8" type="submit" value="Fibonacci" onclick="(fibonacci())" />
     </div>
 
     <style>
+        body {
+            font-family: Arial;
+            font-size: 20px;
+        }
         #btns {
             display: flex;
             justify-content: center;
+            margin-top: 50px;
         }
-
-        #btn1 {
-            
+        input[type="submit"] {
+            padding: 10px 20px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+            border: none;
         }
-
-        #btn2 {}
-
-        #btn3 {}
+        #btn2 {
+            background-color: #e74c3c;
+            color: white;
+        }
+        #btn3 {
+            background-color: #3498db;
+            color: white;
+        }
+        #btn4 {
+            background-color: #f1c40f;
+            color: white;
+        }
+        #btn5 {
+            background-color: #2ecc71;
+            color: white;
+        }
+        #btn6 {
+            background-color: #9b59b6;
+            color: white;
+        }
+        #btn7 {
+            background-color: #16a085;
+            color: white;
+        }
+        #btn8 {
+            background-color: #e67e73;
+            color: white;
+        }
     </style>
 </body>
 
