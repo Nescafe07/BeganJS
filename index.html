@@ -82,6 +82,27 @@
             }
             alert(somapares)
         }
+
+        // 9
+        function nprimo() {
+            var posicao = prompt("Qual a posição do número: ")
+            let primo, n = 0, teste
+
+            for (i = 2; i > 1; i++){
+                teste=true
+                for (j = 2; j > 1; j++){
+                    if(i % j == 0) teste = false
+                }
+                if(teste==true){
+                    primo=1
+                    n++
+                }
+                if(n=posicao)
+                    break
+            }
+            alert(nprimo(posicao))
+        }
+
     </script>
     <div id="btns">
         <input id="btn2" type="submit" value="Não Clique!" onclick="(alerta())">
@@ -91,6 +112,7 @@
         <input id="btn6" type="submit" value="IMC" onclick="(imc())" />
         <input id="btn7" type="submit" value="Soma 3 & 5" onclick="(somamultiplos())" />
         <input id="btn8" type="submit" value="Fibonacci" onclick="(fibonacci())" />
+        <input id="btn9" type="submit" value="N° Primo" onclick="(nprimo())" />
     </div>
 
     <style>
@@ -98,41 +120,50 @@
             font-family: Arial;
             font-size: 20px;
         }
+
         #btns {
             display: flex;
             justify-content: center;
             margin-top: 50px;
         }
+
         input[type="submit"] {
             padding: 10px 20px;
             flex-wrap: wrap;
             border-radius: 5px;
             border: none;
         }
+
         #btn2 {
             background-color: #e74c3c;
             color: white;
         }
+
         #btn3 {
             background-color: #3498db;
             color: white;
         }
+
         #btn4 {
             background-color: #f1c40f;
             color: white;
         }
+
         #btn5 {
             background-color: #2ecc71;
             color: white;
         }
+
         #btn6 {
             background-color: #9b59b6;
             color: white;
         }
+
         #btn7 {
             background-color: #16a085;
             color: white;
         }
+
         #btn8 {
             background-color: #e67e73;
             color: white;
