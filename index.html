@@ -1,174 +1,280 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratic</title>
-</head>
-
-<body>
-    <script>
-        // 1 
-        alert("Cuidado, você está sendo seguido!")
-
-        // 2
-        function descobrir(n1, n2, n3) {
-            var n1 = parseInt(prompt("Digite um número:"))
-            var n2 = parseInt(prompt("Digite um número:"))
-            var n3 = parseInt(prompt("Digite um número:"))
-
-            let maior = Math.max(n1, n2, n3)
-            let menor = Math.min(n1, n2, n3)
-
-            alert("O maior número é " + maior + " e o menor número é " + menor)
-        }
-
-        // 3 
-        function idade() {
-            var idade = parseInt(prompt("Digite a idade:"))
-
-            if (idade >= 18)
-                alert("Maior de idade")
-            else if (idade < 18)
-                alert("Menor de idade")
-        }
-
-        // 4
-        function alerta() {
-            alert('Eu falei não clique!')
-        }
-
-        // 5 
-        function media() {
-            var n1 = parseInt(prompt("Digite um número:"))
-            var n2 = parseInt(prompt("Digite um número:"))
-            var n3 = parseInt(prompt("Digite um número:"))
-
-            alert("A média é: " + (n1 + n2 + n3) / 3)
-        }
-
-        // 6
-        function imc() {
-            var peso = parseFloat(prompt("Digite seu peso:"))
-            var altura = parseFloat(prompt("Digite sua altura:"))
-            alert("Seu IMC: " + peso / (altura * altura))
-        }
-
-        // 7 
-        function somamultiplos() {
-            let soma = 0
-            for (let i = 1; i < 1000; i++) {
-                if (i % 3 === 0 || i % 5 === 0) {
-                    soma += i
-                }
-            }
-            alert(soma)
-        }
-
-        // 8 
-        function fibonacci() {
-            let a = 0
-            let b = 1
-            let somapares = 0
-            let temp = 0
-            while (a <= 50000) {
-                if (a % 2 === 0) {
-                    somapares += a
-                }
-                temp = a
-                a = b
-                b = temp + b
-            }
-            alert(somapares)
-        }
-
-        // 9
-        function nprimo() {
-            var posicao = prompt("Qual a posição do número: ")
-            let primo, n = 0, teste
-
-            for (i = 2; i > 1; i++){
-                teste=true
-                for (j = 2; j > 1; j++){
-                    if(i % j == 0) teste = false
-                }
-                if(teste==true){
-                    primo=1
-                    n++
-                }
-                if(n=posicao)
-                    break
-            }
-            alert(nprimo(posicao))
-        }
-
-    </script>
-    <div id="btns">
-        <input id="btn2" type="submit" value="Não Clique!" onclick="(alerta())">
-        <input id="btn3" type="submit" value="Contar" onclick="(descobrir())" />
-        <input id="btn4" type="submit" value="Idade" onclick="(idade())" />
-        <input id="btn5" type="submit" value="Média" onclick="(media())" />
-        <input id="btn6" type="submit" value="IMC" onclick="(imc())" />
-        <input id="btn7" type="submit" value="Soma 3 & 5" onclick="(somamultiplos())" />
-        <input id="btn8" type="submit" value="Fibonacci" onclick="(fibonacci())" />
-        <input id="btn9" type="submit" value="N° Primo" onclick="(nprimo())" />
-    </div>
-
+    <title>Exercícios de JavaScript</title>
     <style>
         body {
-            font-family: Arial;
-            font-size: 20px;
+            font-family: Arial, sans-serif;
         }
-
-        #btns {
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
+        .exercise {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
         }
-
-        input[type="submit"] {
-            padding: 10px 20px;
-            flex-wrap: wrap;
-            border-radius: 5px;
-            border: none;
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
-
-        #btn2 {
-            background-color: #e74c3c;
-            color: white;
+        table, th, td {
+            border: 1px solid black;
         }
-
-        #btn3 {
-            background-color: #3498db;
-            color: white;
+        th, td {
+            padding: 10px;
+            text-align: center;
         }
-
-        #btn4 {
-            background-color: #f1c40f;
-            color: white;
+        .prime {
+            background-color: #c3e6cb;
         }
-
-        #btn5 {
-            background-color: #2ecc71;
-            color: white;
-        }
-
-        #btn6 {
-            background-color: #9b59b6;
-            color: white;
-        }
-
-        #btn7 {
-            background-color: #16a085;
-            color: white;
-        }
-
-        #btn8 {
-            background-color: #e67e73;
-            color: white;
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
     </style>
-</body>
+</head>
+<body>
 
+    <h1>Exercícios de JavaScript</h1>
+
+    <!-- Exercicio 1 - Apresentando mensagens de alerta -->
+    <div class="exercise">
+        <h3>Exercício 1 - Apresentando mensagens de alerta</h3>
+            <button onclick="alert('Eu estava perguntando!')">Pode Clicar?</button>
+    </div>
+
+    <!-- Exercicio 2 - Apresentando mensagens de alerta pressionando botão -->
+    <div class="exercise">
+        <h3>Exercício 2 - Apresentando mensagens de alerta pressionando botão</h3>
+        <button onclick="alert('Eu falei não CLIQUE!!!')">Não Clique!</button>
+    </div>
+
+    <!-- Exercicio 3 - Receber 3 números e informar o maior e menor -->
+    <div class="exercise">
+        <h3>Exercício 3 - Maior e menor número</h3>
+        <label>Número 1: <input type="number" id="num1"></label><br>
+        <label>Número 2: <input type="number" id="num2"></label><br>
+        <label>Número 3: <input type="number" id="num3"></label><br>
+        <button onclick="maiorMenor()">Verificar Maior e Menor</button>
+        <p id="resultado3"></p>
+        <script>
+            function maiorMenor() {
+                const n1 = parseFloat(document.getElementById('num1').value);
+                const n2 = parseFloat(document.getElementById('num2').value);
+                const n3 = parseFloat(document.getElementById('num3').value);
+                const maior = Math.max(n1, n2, n3);
+                const menor = Math.min(n1, n2, n3);
+                document.getElementById('resultado3').textContent = `Maior: ${maior}, Menor: ${menor}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 4 - Verificar se é menor de idade -->
+    <div class="exercise">
+        <h3>Exercício 4 - Verificar se é menor de idade</h3>
+        <label>Idade: <input type="number" id="idade"></label><br>
+        <button onclick="verificarIdade()">Verificar</button>
+        <p id="resultado4"></p>
+        <script>
+            function verificarIdade() {
+                const idade = parseInt(document.getElementById('idade').value);
+                const mensagem = idade >= 18 ? "Você é maior de idade." : "Você é menor de idade.";
+                document.getElementById('resultado4').textContent = mensagem;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 5 - Calcular média aritmética -->
+    <div class="exercise">
+        <h3>Exercício 5 - Média aritmética</h3>
+        <label>Número 1: <input type="number" id="media1"></label><br>
+        <label>Número 2: <input type="number" id="media2"></label><br>
+        <label>Número 3: <input type="number" id="media3"></label><br>
+        <button onclick="calcularMedia()">Calcular Média</button>
+        <p id="resultado5"></p>
+        <script>
+            function calcularMedia() {
+                const n1 = parseFloat(document.getElementById('media1').value);
+                const n2 = parseFloat(document.getElementById('media2').value);
+                const n3 = parseFloat(document.getElementById('media3').value);
+                const media = (n1 + n2 + n3) / 3;
+                document.getElementById('resultado5').textContent = `A média é: ${media.toFixed(2)}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 6 - Calcular IMC -->
+    <div class="exercise">
+        <h3>Exercício 6 - Calcular IMC</h3>
+        <label>Altura (m): <input type="number" id="altura" step="0.01"></label><br>
+        <label>Peso (kg): <input type="number" id="peso"></label><br>
+        <button onclick="calcularIMC()">Calcular IMC</button>
+        <div id="resultado6"></div>
+        <script>
+            function calcularIMC() {
+                const altura = parseFloat(document.getElementById('altura').value);
+                const peso = parseFloat(document.getElementById('peso').value);
+                const imc = peso / (altura * altura);
+                document.getElementById('resultado6').textContent = `Seu IMC é: ${imc.toFixed(2)}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 7 - Soma de múltiplos de 3 ou 5 abaixo de 1000 -->
+    <div class="exercise">
+        <h3>Exercício 7 - Soma de múltiplos de 3 ou 5 abaixo de 1000</h3>
+        <button onclick="somarMultiplos()">Calcular Soma</button>
+        <p id="resultado7"></p>
+        <script>
+            function somarMultiplos() {
+                let soma = 0;
+                for (let i = 1; i < 1000; i++) {
+                    if (i % 3 === 0 || i % 5 === 0) {
+                        soma += i;
+                    }
+                }
+                document.getElementById('resultado7').textContent = `A soma é: ${soma}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 8 - Soma dos termos pares de Fibonacci abaixo de 50.000 -->
+    <div class="exercise">
+        <h3>Exercício 8 - Soma dos termos pares de Fibonacci abaixo de 50.000</h3>
+        <button onclick="somarFibonacci()">Calcular Soma</button>
+        <p id="resultado8"></p>
+        <script>
+            function somarFibonacci() {
+                let a = 0, b = 1, soma = 0;
+                while (b < 50000) {
+                    if (b % 2 === 0) {
+                        soma += b;
+                    }
+                    let temp = a + b;
+                    a = b;
+                    b = temp;
+                }
+                document.getElementById('resultado8').textContent = `A soma dos termos pares é: ${soma}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 9 - Qual é o 1001º número primo -->
+    <div class="exercise">
+        <h3>Exercício 9 - Qual é o 1001º número primo?</h3>
+        <button onclick="numeroPrimo()">Verificar 1001º Primo</button>
+        <p id="resultado9"></p>
+        <script>
+            function ePrimo(num) {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) return false;
+                }
+                return num > 1;
+            }
+
+            function numeroPrimo() {
+                let count = 0;
+                let num = 1;
+                while (count < 1001) {
+                    num++;
+                    if (ePrimo(num)) {
+                        count++;
+                    }
+                }
+                document.getElementById('resultado9').textContent = `O 1001º número primo é: ${num}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 10 - Exibir números primos entre 0 e 200 -->
+    <div class="exercise">
+        <h3>Exercício 10 - Exibir números primos entre 0 e 200</h3>
+        <button onclick="exibirPrimos()">Exibir Números Primos</button>
+        <div class="two-columns" id="resultado10"></div>
+        <script>
+            function ePrimo(num) {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) return false;
+                }
+                return num > 1;
+            }
+
+            function exibirPrimos() {
+                const resultado = document.getElementById('resultado10');
+                resultado.innerHTML = ""; // Limpa a div
+                for (let i = 2; i <= 200; i++) {
+                    if (ePrimo(i)) {
+                        const div = document.createElement('div');
+                        div.textContent = i;
+                        div.classList.add('prime');
+                        resultado.appendChild(div);
+                    }
+                }
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 11 - Calcular o Delta de uma função de segundo grau -->
+    <div class="exercise">
+        <h3>Exercício 11 - Calcular o Delta de uma função de segundo grau</h3>
+        <label>Coeficiente a: <input type="number" id="a" value="2"></label><br>
+        <label>Coeficiente b: <input type="number" id="b" value="8"></label><br>
+        <label>Coeficiente c: <input type="number" id="c" value="-24"></label><br>
+        <button onclick="calcularDelta()">Calcular Delta</button>
+        <p id="resultado11"></p>
+        <script>
+            function calcularDelta() {
+                const a = parseFloat(document.getElementById('a').value);
+                const b = parseFloat(document.getElementById('b').value);
+                const c = parseFloat(document.getElementById('c').value);
+                const delta = b * b - 4 * a * c;
+
+                const passo1 = `Δ = b² - 4ac`;
+                const passo2 = `Δ = (${b})² - 4(${a})(${c})`;
+                const passo3 = `Δ = ${b*b} - ${4*a*c}`;
+                const passo4 = `Δ = ${delta}`;
+
+                const resultado = `${passo1}<br>${passo2}<br>${passo3}<br><strong>${passo4}</strong>`;
+                document.getElementById('resultado11').innerHTML = resultado;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 12 - Inverter uma sequência de caracteres -->
+    <div class="exercise">
+        <h3>Exercício 12 - Inverter uma sequência de caracteres</h3>
+        <label>Sequência: <input type="text" id="sequencia"></label><br>
+        <button onclick="inverterSequencia()">Inverter</button>
+        <p id="resultado12"></p>
+        <script>
+            function inverterSequencia() {
+                const str = document.getElementById('sequencia').value;
+                let resultado = '';
+                for (let i = str.length - 1; i >= 0; i--) {
+                    resultado += str[i];
+                }
+                document.getElementById('resultado12').textContent = `Resultado invertido: ${resultado}`;
+            }
+        </script>
+    </div>
+
+    <!-- Exercicio 13 - Calcular potenciação -->
+    <div class="exercise">
+        <h3>Exercício 13 - Calcular potenciação (2^8)</h3>
+        <button onclick="calcularPotenciacao()">Calcular Potenciação</button>
+        <p id="resultado13"></p>
+        <script>
+            function calcularPotenciacao() {
+                const base = 2;
+                const expoente = 8;
+                let resultado = 1;
+                for (let i = 0; i < expoente; i++) {
+                    resultado *= base;
+                }
+                document.getElementById('resultado13').textContent = `${base} elevado a ${expoente} é: ${resultado}`;
+            }
+        </script>
+    </div>
+
+</body>
 </html>
